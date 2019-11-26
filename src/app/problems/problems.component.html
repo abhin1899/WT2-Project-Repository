@@ -1,0 +1,32 @@
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <h1>A List Of Amazing Problems</h1>
+            </div>
+            <!-- <div class="col-sm">
+                //Todo Filter
+            </div> -->
+        </div>
+    </div>
+</div>
+
+<div class="container">
+            <div class="table-responsive-vertical shadow-z-1">
+                <!-- Table starts here -->
+                <table id="table" class="table table-hover table-mc-light-blue">
+                <thead>
+                <th>Problem Statement</th>
+                <th>Category</th>
+                <th>Difficulty</th>
+                </thead>
+                <tbody>
+                <tr *ngFor="let result of results" style="cursor: pointer;" (click)="resultSearch(result.statement)">
+                <td>{{result.statement}}</td>
+                <td>{{result.category}}</td>
+                <td>{{result.difficulty}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+</div>

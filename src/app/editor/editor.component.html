@@ -1,0 +1,60 @@
+<div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">IDE Play</h1>
+        </div>
+</div>
+
+
+<div class="container">
+        <div class="row">
+                <div class="col-sm" style="text-align: center;">
+                        <label><p style="font-size: 25px;">Chosen Language : &nbsp;</p></label>
+                        <select (change)="chosen($event.target.value)">
+                          <option value="0">----</option>
+                          <option *ngFor="let language of languages" value={{language}}>
+                            {{language}}
+                          </option>
+                        </select>
+                </div>
+                <!-- <div class="col-sm" style="text-align: center;">
+                    <div>
+                        <button class="btn btn-lg btn-primary" (click)="compile()">Submit</button>
+                    </div>      
+                </div> -->
+        </div>
+        <br>
+</div>
+
+<div class="container">
+     <div ace-editor
+        [(text)]="text"
+        [mode]="'c_cpp'" 
+        [theme]="'eclipse'"
+        [options]="options"
+        [readOnly]="false"
+        [autoUpdateContent]="true" 
+        style="min-height: 400px; width:100%; overflow: auto;font-size: 20px;">
+    </div>
+
+<!--     
+    <div style = "padding-top:20px;">
+        <button type="button" class="btn btn-secondary btn-lg" (click)="getContent()">Submit</button>
+    </div> -->
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <textarea name="input" placeholder="Enter input" [(ngModel)]="input.content"></textarea>
+            </div>
+            <div class="col-sm">
+                <textarea name="output" placeholder="output" >Output : &#13; {{output}}</textarea>
+            </div> 
+        </div>
+    </div>
+    
+</div>
+
+<div class="container">
+    <button class="btn btn-lg btn-primary" (click)="compile()">Submit</button>
+</div>
+

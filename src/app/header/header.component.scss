@@ -1,0 +1,18 @@
+.nav-item {
+    font-size: 20px;
+}
+.dp-item {
+    width: 90%;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.699);
+    top:15px;
+    bottom: 15px;
+    color: white;
+}
+.dp-item:hover{
+    background-color: rgb(175, 173, 171);
+    color:black;
+}
+.nav-link {
+    color:rgb(231, 231, 231) !important;
+}

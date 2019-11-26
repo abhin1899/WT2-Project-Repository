@@ -1,0 +1,83 @@
+<nav class="navbar navbar-expand-lg  navbar-dark bg-dark sticky-top">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar1" aria-controls="navbar1"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-md-right" id="navbar1">
+        <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#">CodePlay</a>
+        </li>
+        <!-- <li *ngIf="auth.isLoggedIn()" class="nav-item">
+          <a class="nav-link" href="#">Articles</a>
+        </li> -->
+        <li *ngIf="auth.isLoggedIn()" class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Problems
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" routerLink="/problems">All Problems</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" (click) = "navProblem('arrays')">Arrays</a>
+            <a class="dropdown-item" (click) = "navProblem('bfs')">BFS</a>
+            <a class="dropdown-item" (click) = "navProblem('dfs')">DFS</a>
+            <a class="dropdown-item" (click) = "navProblem('backtracking')">Backtracking</a>
+          </div>
+        </li>
+       
+        <li *ngIf="auth.isLoggedIn()" class="nav-item">
+          <a class="nav-link" routerLink="/ide">IDE</a>
+        </li>
+        <li class="nav-item" style="padding-left:50px;">
+            <a class="nav-link" routerLink="/game" style="color: rgb(120, 215, 228) !important;">Take A Break!</a>
+        </li>
+        
+      </ul>
+      <ul class="navbar-nav mr-auto">
+        
+          <li class="nav-item" style="position:absolute;top:12px;">
+              <!-- <form class="form-inline my-2 my-lg-0"> -->
+              <div style="height: 300px; overflow: auto;">
+                  <input class="form-control mr-sm-2" type="search" style="width: 400px;" placeholder="Search" aria-label="Search"  [(ngModel)]='searchtext' (keyup)=openSearch()>
+                  <!-- <div style="height:200px;overflow: auto;"> -->
+                    <div *ngFor="let stri of testreturn" class="dp-item" (click)=resultSearch($event)> {{stri}}</div>
+                  <!-- </div> -->
+              </div>
+              <!-- </form>   -->
+          </li>
+          
+      </ul>
+      
+                        <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
+
+
+      <ul class="navbar-nav">
+        
+        <li *ngIf="!auth.isLoggedIn()" class="nav-item">
+          <a class="nav-link" routerLink="/login">Login</a>
+        </li>
+        <li *ngIf="!auth.isLoggedIn()" class="nav-item">
+            <a class="nav-link" routerLink="/signup">SignUp</a>
+        </li>
+        <li *ngIf="auth.isLoggedIn()" class="nav-item">
+          <a class="nav-link" routerLink="/profile">{{ auth.getUserDetails()?.first_name }}</a>
+        </li>
+        <li *ngIf="auth.isLoggedIn()" class="nav-item">
+          <a class="nav-link" routerLink="" (click)="auth.logout()"  style="color: red !important;">Logout</a>
+        </li>
+      </ul>
+
+    </div>
+  </nav>
+
+  <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark rounded">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample10" aria-controls="navbarsExample10"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse justify-content-md-right" id="navbarsExample10">
+      
+    </div>
+  </nav> -->

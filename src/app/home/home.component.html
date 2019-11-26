@@ -1,0 +1,42 @@
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <div class="row">
+          <div class="col-sm">
+            <h1 class="display-4">Code Play</h1>
+            <p style="font-size: 25px">Trending Articles</p>
+          </div>
+    </div>
+</div>
+
+   
+<div class="container bg-dark">
+  <div class="row">
+<!-- Card 4 -->
+<div *ngFor="let trendyStatment of trendyStatments" class="col-md-4 card-container">
+    <div class="card-flip">
+      <!-- Card 4 Front -->
+      <div class="card front text-center">
+        <div class="card-block">
+          <span class="fa fa-4x fa-smile-o"></span>
+          <h4 class="card-title">{{trendyStatment.statement}}</h4>
+          <br>
+          <h6 class="card-subtitle text-muted">Category: {{trendyStatment.category}}</h6>
+          <p class="card-text">Difficulty : {{trendyStatment.difficulty}}</p>
+        </div>
+      </div>
+      <!-- End Card 4 Front -->
+
+      <!-- Card 4 Back -->
+      <div class="card back text-center">
+        <div class="card-block">
+          <h4 class="card-title">Solve The Problem</h4>
+          <p class="card-text">Trending Currently</p>
+          <a class="btn btn-primary" (click)="resultSearch(trendyStatment.statement)" style="background-color: rgba(206, 40, 40, 0.712);cursor: pointer;">Go To Problem</a>
+        </div>
+      </div>
+      <!-- End Card 4 Back -->
+    </div>
+  </div>
+  <!-- End Card 4 -->
+  </div>
+  </div>
